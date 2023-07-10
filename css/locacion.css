@@ -1,0 +1,120 @@
+#hero img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+#hero h1{
+    font-weight: bold;
+    z-index: 100;
+    color: white;
+}
+.titulo{
+    width: 100%;
+    height: 750px;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.container-locacion {
+    width: 100%;
+    margin-top: 150px;
+}
+
+.container-locacion .loc h1 {
+    text-align: center;
+}
+
+.grid-galeria {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 500px;
+    grid-gap: 20px;
+    position: relative;
+}
+
+.grid-galeria .box-img figure {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-galeria .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-galeria .box-img:nth-child(1) {
+    grid-column-start: span 2;
+}
+
+.grid-galeria .box-img:nth-child(4) {
+    grid-row-start: span 2;
+}
+
+figure:hover {
+    transition: all .3s ease-in;
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+}
+
+    @media screen and (max-width:800px) {
+        .grid-galeria {
+            width: 95%;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            grid-template-rows: 200px;
+        }
+
+        .grid-galeria .box-img:nth-child(1) {
+            grid-column-start: span 1;
+        }
+
+        #hero h1{
+            font-size: 3em;
+        } 
+    
+        #hero img{
+            height: 400px;
+        }
+    
+        .titulo{
+            height: 400px;
+        }
+
+
+
+    }
+
+    @media screen and (max-width:500px) {
+        .grid-galeria {
+            width: 90%;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .grid-galeria .box-img img {
+            height: 200px;
+        }
+
+
+        #hero h1{
+            font-size: 1em;
+            /* font-family: 'Times New Roman', Times, serif; */
+        }  
+    
+        #hero img{
+            height: 300px;
+        }
+       
+        .titulo{
+            height: 300px;
+        }
+    }
