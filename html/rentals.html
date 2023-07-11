@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rentals Balux</title>
     <link rel="shortcut icon" href="../img/cropped-favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/rentals.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="/css/rentals.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
@@ -35,6 +35,7 @@
                     </ul>
                 </li>
                 <li><a href="/index.html#contacto">CONTACTO</a></li>
+                <li><a href="/html/productos.html">ADMIN</a></li>
             </ul>
         </nav>
         </div>
@@ -65,313 +66,58 @@
     <div class="contenedor">
         
 
-        <main >
+        
             <!--     sillones   -->
+            <div id="app" class="container">
 
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_1.jpg">
-                    <img src="../img/rentals/sillon_1.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Alto: 1.20m / Ancho: 78cm / Prof: 59cm | Art n°: SN006</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_2.jpg">
-                    <img src="../img/rentals/sillon_2.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Alto: 98cm / Ancho: 72cm / Prof: 74cm | Art n°: SN008</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_3.jpg">
-                    <img src="../img/rentals/sillon_3.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Alto: 72cm / Ancho: 60cm / Prof: 60cm | Art n°: SN009</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_4.jpg">
-                    <img src="../img/rentals/sillon_4.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Alto: 70cm / Ancho: 1,30m / Prof: 70cm | Art n°: SN007</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_5.jpg">
-                    <img src="../img/rentals/sillon_5.jpg" alt="Producto">
-                </a>
-                <p class="detalle"> Art n°: SN012</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_6.jpg">
-                    <img src="../img/rentals/sillon_6.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: SN013</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_7.jpg">
-                    <img src="../img/rentals/sillon_7.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: SN014</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_8.jpg">
-                    <img src="../img/rentals/sillon_8.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: SN015</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_9.jpg">
-                    <img src="../img/rentals/sillon_9.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: SN016</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_10.jpg">
-                    <img src="../img/rentals/sillon_10.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: SN017</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_11.jpg">
-                    <img src="../img/rentals/sillon_11.jpg" alt="Producto">
-                </a>
-                <p class="detalle"> Art n°: SN019</p>
-            </div>
-            <div class="card-sillones">
-                <a href="../img/rentals/sillon_12.jpg">
-                    <img src="../img/rentals/sillon_12.jpg" alt="Producto">
-                </a>
-                <p class="detalle">2.00cm ancho / 90cm prof / 87cm alto | Art n°: SN024</p>
-            </div>
+                <div class="row">
+                <main >
+                    <template v-for="producto in productos">
+                        <div v-if="producto.categoria === 'sillones'" :key="producto.id" class="card-sillones">
+                            <img :src="producto.imagen" class="card-img-top" :alt="producto.nombre">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ producto.nombre }}</h5>
+                                <p class="card-text">Precio: $ {{ producto.precio }}</p>
+                                <p class="card-text">Stock: {{ producto.stock }}</p>
+                            </div>
+                        </div>
 
+                        <div v-if="producto.categoria === 'escritorios'" :key="producto.id" class="card-escritorios">
+                            <img :src="producto.imagen" class="card-img-top" :alt="producto.nombre">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ producto.nombre }}</h5>
+                                <p class="card-text">Precio: $ {{ producto.precio }}</p>
+                                <p class="card-text">Stock: {{ producto.stock }}</p>
+                            </div>
+                        </div>
 
-            <!--     Escritorios   -->
+                        <div v-if="producto.categoria === 'mesas'" :key="producto.id" class="card-mesas">
+                            <img :src="producto.imagen" class="card-img-top" :alt="producto.nombre">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ producto.nombre }}</h5>
+                                <p class="card-text">Precio: $ {{ producto.precio }}</p>
+                                <p class="card-text">Stock: {{ producto.stock }}</p>
+                            </div>
+                        </div>
 
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_1.jpg">
-                    <img src="../img/rentals/escritorio_1.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Ancho: 1.20m / Alto: 73cm / Prof: 65cm | Art n°: ES019</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_2.jpg">
-                    <img src="../img/rentals/escritorio_2.jpg" alt="Producto">
-                </a>
-                <p class="detalle">1,20 x 0,60 prof x 0,75 h | Art n°: ES018</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_3.jpg">
-                    <img src="../img/rentals/escritorio_3.jpg" alt="Producto">
-                </a>
-                <p class="detalle">0,95 x 0,45 prof x 0,75 h | Art n°: ES017</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_4.jpg">
-                    <img src="../img/rentals/escritorio_4.jpg" alt="Producto">
-                </a>
-                <p class="detalle">1,4 x 0,82 prof x 0,70 h | Art n°: ES002
-                </p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_5.jpg">
-                    <img src="../img/rentals/escritorio_5.jpg" alt="Producto">
-                </a>
-                <p class="detalle">78cm x 46cm x 70 cm h | Art n°: ES015</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_6.jpg">
-                    <img src="../img/rentals/escritorio_6.jpg" alt="Producto">
-                </a>
-                <p class="detalle">130cm x 75cm prof x 77cm h | Art n°: ES014</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_7.jpg">
-                    <img src="../img/rentals/escritorio_7.jpg" alt="Producto">
-                </a>
-                <p class="detalle">120 cm x 75 cm prof x 80 cm h | Art n°: ES013</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_8.jpg">
-                    <img src="../img/rentals/escritorio_8.jpg" alt="Producto">
-                </a>
-                <p class="detalle">170 cm x 70 cm prof x 80 cm h | Art n°: ES012</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_9.jpg">
-                    <img src="../img/rentals/escritorio_9.jpg" alt="Producto">
-                </a>
-                <p class="detalle">130cm x 75cm prof x 77cm h | Art n°: ES010</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_10.jpg">
-                    <img src="../img/rentals/escritorio_10.jpg" alt="Producto">
-                </a>
-                <p class="detalle">150 cm x 74 cm prof x 90 cm h | Art n°: ES011</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_11.jpg">
-                    <img src="../img/rentals/escritorio_11.jpg" alt="Producto">
-                </a>
-                <p class="detalle">2 unidades- 140cm x 74cm prof x 75cm h | Art n°: ES009</p>
-            </div>
-            <div class="card-escritorios">
-                <a href="../img/rentals/escritorio_12.jpg">
-                    <img src="../img/rentals/escritorio_12.jpg" alt="Producto">
-                </a>
-                <p class="detalle">6 unidades 125cm x 70cm prof x 75 cm h | Art n°: ES007</p>
-            </div>
+                        <div v-if="producto.categoria === 'tecnologia'" :key="producto.id" class="card-tecnologia">
+                            <img :src="producto.imagen" class="card-img-top" :alt="producto.nombre">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ producto.nombre }}</h5>
+                                <p class="card-text">Precio: $ {{ producto.precio }}</p>
+                                <p class="card-text">Stock: {{ producto.stock }}</p>
+                            </div>
+                        </div>
 
 
 
-            <!--     mesas   -->
-
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_1.jpg">
-                    <img src="../img/rentals/mesa_1.jpg" alt="Producto">
-                </a>
-                <p class="detalle">165 cm x 87cm prof x 80 cm h | Art n°: ME048</p>
+                    </template>
+                </main> 
+                </div>
             </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_2.jpg">
-                    <img src="../img/rentals/mesa_2.jpg" alt="Producto">
-                </a>
-                <p class="detalle">ancho 1,60 / prof 67 / alto 87 | Art n°: ME047</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_3.jpg">
-                    <img src="../img/rentals/mesa_3.jpg" alt="Producto">
-                </a>
-                <p class="detalle">110 cm diam x 75 cm h | Art n°: ME046</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_4.jpg">
-                    <img src="../img/rentals/mesa_4.jpg" alt="Producto">
-                </a>
-                <p class="detalle">80 cm x 40 cm prof x 96 cm h | Art n°: ME045</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_5.jpg">
-                    <img src="../img/rentals/mesa_5.jpg" alt="Producto">
-                </a>
-                <p class="detalle">110 cm x 60 cm prof x 72 cm h | Art n°: ME044</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_6.jpg">
-                    <img src="../img/rentals/mesa_6.jpg" alt="Producto">
-                </a>
-                <p class="detalle">120 cm diam x 75 cm h | Art n°: ME043</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_7.jpg">
-                    <img src="../img/rentals/mesa_7.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Alto: 37cm / Ancho: 84cm / Prof: 48cm | Art n°: ME042</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_8.jpg">
-                    <img src="../img/rentals/mesa_8.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Alto: 45cm / Ancho: 1.00m / Prof: 50cm | Art n°: ME041</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_9.jpg">
-                    <img src="../img/rentals/mesa_9.jpg" alt="Producto">
-                </a>
-                <p class="detalle">1.00m ancho / 45cm prof / 45cm alto | Art n°: ME040</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_10.jpg">
-                    <img src="../img/rentals/mesa_10.jpg" alt="Producto">
-                </a>
-                <p class="detalle">1,59.5m ancho / 80cm prof / 75cm alto | Art n°: ME039</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_11.jpg">
-                    <img src="../img/rentals/mesa_11.jpg" alt="Producto">
-                </a>
-                <p class="detalle">58cm ancho / 50cm Prof /48cm altura | Art n°: ME038</p>
-            </div>
-            <div class="card-mesas">
-                <a href="../img/rentals/mesa_12.jpg">
-                    <img src="../img/rentals/mesa_12.jpg" alt="Producto">
-                </a>
-                <p class="detalle">2 unidades 45cm x 45 cm prof x 47 cm h | Art n°: ME037</p>
             </div>
 
-
-            <!--     Tecnologia   -->
-
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_1.jpg">
-                    <img src="../img/rentals/tec_1.jpg" alt="Producto">
-                </a>
-                <p class="detalle"> Art n°: TE016</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_2.jpg">
-                    <img src="../img/rentals/tec_2.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE017</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_3.jpg">
-                    <img src="../img/rentals/tec_3.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE021</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_4.jpg">
-                    <img src="../img/rentals/tec_4.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE015</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_5.jpg">
-                    <img src="../img/rentals/tec_5.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE038</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_6.jpg">
-                    <img src="../img/rentals/tec_6.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE024</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_7.jpg">
-                    <img src="../img/rentals/tec_7.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE011</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_8.jpg">
-                    <img src="../img/rentals/tec_8.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE033</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_9.jpg">
-                    <img src="../img/rentals/tec_9.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE026</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_10.jpg">
-                    <img src="../img/rentals/tec_10.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE028</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_11.jpg">
-                    <img src="../img/rentals/tec_11.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE032</p>
-            </div>
-            <div class="card-tecnologia">
-                <a href="../img/rentals/tec_12.jpg">
-                    <img src="../img/rentals/tec_12.jpg" alt="Producto">
-                </a>
-                <p class="detalle">Art n°: TE012</p>
-            </div>
-
-        </main> 
+        
         <br>       
     </div>
 
@@ -436,7 +182,12 @@
     </footer>
     <script src="../js/rentals.js"></script>
 
-    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="../js/productos.js"></script>
+
+
+
 </body>
 
 </html>

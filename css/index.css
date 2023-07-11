@@ -358,6 +358,14 @@ video {
     background-color: rgb(197, 173, 20);
 }
 
+.btn-especial1:hover{
+    background-color: rgb(24, 24, 23);
+}
+
+.btn-especial2:hover{
+    background-color: rgb(197, 173, 20);
+}
+
 .btn-especial{
     background-color: rgb(254, 222, 4);
     font-size: 1em;
@@ -368,6 +376,30 @@ video {
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
+}
+
+.btn-especial1{
+    background-color: rgb(65, 62, 61);
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+.btn-especial2{
+    background-color: rgb(254, 222, 4);
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
 }
 
 .formulario input[type="email"]{
@@ -561,3 +593,45 @@ video {
         object-fit: cover;
     }
 }
+
+.table-responsive {
+        overflow-x: auto;
+        width: 100%;
+}
+
+.table table-bordered {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.table-responsive tr th { 
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .table-responsive > .table {
+            margin-bottom: 0;
+        }
+
+        .table-responsive > .table > thead > tr > th,
+        .table-responsive > .table > tbody > tr > th,
+        .table-responsive > .table > tfoot > tr > th,
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td,
+        .table-responsive > .table > tfoot > tr > td {
+            white-space: nowrap;
+        }
+}
+

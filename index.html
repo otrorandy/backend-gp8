@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacios Balux</title>
+    <link rel="shortcut icon" href="/img/cropped-favicon-32x32.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/d33b22f8d6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><a href="#"><img src="/img/BaluxW.png" class="logo"></img></a> </div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle"><img class="menu" src="/img/menuW.svg" alt="menu"></label>
+
+        <nav class="navigation">
+
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#qs">QUIENES SOMOS</a></li>
+                <li><a href="#">NUESTROS SERVICIOS</a>
+                    <ul>
+                        <li><a href="/html/locacion.html">LOCACIÓN</a></li>
+                        <li><a href="/html/coworking.html">COWORKING</a></li>
+                        <li><a href="/html/rentals.html">RENTALS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="/html/productos.html">ADMIN</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <!-- <section id="hero">
+        <div class="slider">
+            <ul>
+                <li><img src="./img/Balux-1.jpg" alt=""></li>
+                <li><img src="./img/Balux-21.jpg" alt=""></li>
+                <li><img src="./img/Balux-23.jpg" alt=""></li>
+                <li><img src="./img/locacion/balux_espacios_14.jpg" alt=""></li>
+                <li><img src="./img/locacion/balux_espacios_15.jpg" alt=""></li>
+            </ul>
+        </div>
+    </section> -->
+
+    <section id="hero">
+        <img src="/img/portada.jpg" id="" alt="">
+    </section>
+
+    <section id="quienes-somos">
+        <div class="quienes-cont">
+            <h2 id="qs">
+                Quienes Somos
+            </h2>
+            <p>
+                Espacios Balux es una antigua fabrica textil en el barrio de Paternal, que producía medias de mujer,
+                pijamas y sweaters. Cuenta con espacios que datan de 1933 y otros de 1965 respetando los estilos
+                arquitectónicos de cada época. Tiene salida a 3 calles , parking propio y varias comodidades mas
+                para cualquier tipo de producción al ser un predio de 5000 mts2. Con el correr de los años la fuimos
+                transformando en locación para diversas producciones audiovisuales. Hoy en día agregamos el área de
+                depósitos , coworking y eventos.
+            </p>
+        </div>
+   
+        <div class="vid">
+            <video onloadedmetadata="this.muted=true" autoplay loop>
+                <source src="/img/video25.mp4">
+            </video>
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <form class="formulario" id="formulario" onsubmit="return validarFormulario()">
+            <h3>CONTACTO</h3>
+            <div class="input-formulario">
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="Juan" id="nombre" name="nombre">
+            </div>
+            <div class="input-formulario">
+                <label for="correo">Correo</label>
+                <input type="email" placeholder="ejemplo@ejemplo.com" id="correo" name="correo">
+            </div>
+            <div class="input-formulario">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" placeholder="+5491123456789" id="telefono" name="telefono">
+            </div>
+            <div class="input-formulario">
+                <label for="mensaje">Consulta</label>
+                <textarea></textarea>
+            </div>
+            <div class="btn-formulario">
+                <input type="submit" class="btn-especial" value="Enviar">
+            </div>
+        </form>
+        </div>
+    </section>
+
+    <div class="flexible-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.4527437865145!2d-58.47306468518953!3d-34.61799748045587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9f17d294ce9%3A0x2be3fc7ebd50b104!2sBolivia+1150%2C+C1416ANB+CABA!5e0!3m2!1ses-419!2sar!4v1552346704427"
+            width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+        <div class="pie-pagina">
+            <div class="contenedor-piepagina contenedor">
+                <div class="infoFooter">
+                    <div><img src="/img/BaluxW.png" class="logoFooter"></img></div>
+                    <div class="infoFooter contenedorRedes">
+                        <div class="redes">
+                            <a href="https://www.facebook.com/espaciosbalux" target="_blank" rel="noopener"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/espaciosbalux" target="_blank" rel="noopener"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="infoFooter">
+                    <h4>ENLACES UTILES</h4>
+                    <hr class="linea-color">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#quienes-somos">Quienes somos</a></li>
+                        <li><a href="#">Nuestros servicios</a>
+                            <ul>
+                                <li><a href="./html/locacion.html">Locación</a></li>
+                                <li><a href="./html/coworking.html">Coworking</a></li>
+                                <li><a href="./html/rentals.html">Rentals</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="infoFooter">
+                    <h4>CONTACTANOS</h4>
+                    <hr class="linea-color">
+                    <p><i class="fa-solid fa-location-dot"></i> Bolivia 1256</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@espaciosbalux.com.ar</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> +54911 21550037</p>
+                    <p>Lunes - Viernes 10 - 18 hs.</p>
+                    <p>Sábados 10 - 13 hs.</p>
+
+                </div>
+                <div class="infoFooter">
+                    <h4>SUSCRIBETE</h4>
+                    <hr class="linea-color">
+                    <p>Ingresa tu e-mail para suscribirte a las últimas novedades</p>
+
+                    <input type="email" class="correo" placeholder="Tu correo">
+                    <input type="submit" class="btn-footer" value="Suscribirse">
+
+                </div>
+            </div>
+            <div>
+                <p class="copy">&copy; EspaciosBalux - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/validacion.js"></script>
+</body>
+
+</html>
